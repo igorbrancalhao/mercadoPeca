@@ -9,7 +9,7 @@
 if ( !defined('INCLUDED') ) { die("Access Denied"); }
 ?>
 
-<table width="100%" border="0" cellpadding="3" cellspacing="2" class="border">
+<table width="100%" border="0"  class="border">
    <tr class="c4">
       <td colspan="3">Auction Preview</td>
    </tr>
@@ -18,7 +18,7 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
       <td colspan="2" width="100%"><img src="themes/<?=$setts['default_theme'];?>/img/pixel.gif" width="1" height="1"></td>
    </tr>
    <tr>
-      <td colspan="3" style="padding-left: 50px; padding-right: 50px;"><?=$auction_details_page;?></td>
+      <td colspan="3"><?=$auction_details_page;?></td>
    </tr>
    <?=$auction_fees_box;?>
 	<?=$auction_terms_box;?>

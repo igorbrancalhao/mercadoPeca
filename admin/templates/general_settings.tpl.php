@@ -410,7 +410,7 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
       <!-- Site Invoices Settings -->
       <tr class="c1">
          <td align="right" nowrap><?=AMSG_INVOICE_HEADER;?></td>
-         <td><textarea name="invoice_header" style="width=100%; height: 80px;"><?=$setts_tmp['invoice_header'];?></textarea></td>
+         <td><textarea name="invoice_header" style="width:100%; height: 80px;"><?=$setts_tmp['invoice_header'];?></textarea></td>
       </tr>
       <tr>
          <td align="right" class="explain"><img src="images/info.gif"></td>
@@ -418,7 +418,7 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
       </tr>
       <tr class="c1">
          <td align="right" nowrap><?=AMSG_INVOICE_FOOTER;?></td>
-         <td><textarea name="invoice_footer" style="width=100%; height: 80px;"><?=$setts_tmp['invoice_footer'];?></textarea></td>
+         <td><textarea name="invoice_footer" style="width:100%; height: 80px;"><?=$setts_tmp['invoice_footer'];?></textarea></td>
       </tr>
       <tr>
          <td align="right" class="explain"><img src="images/info.gif"></td>
@@ -426,7 +426,7 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
       </tr>
       <tr class="c1">
          <td align="right" nowrap><?=AMSG_INVOICE_COMMENTS;?></td>
-         <td><textarea name="invoice_comments" style="width=100%; height: 80px;"><?=$setts_tmp['invoice_comments'];?></textarea></td>
+         <td><textarea name="invoice_comments" style="width:100%; height: 80px;"><?=$setts_tmp['invoice_comments'];?></textarea></td>
       </tr>
       <tr>
          <td align="right" class="explain"><img src="images/info.gif"></td>

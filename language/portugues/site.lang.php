@@ -5,6 +5,9 @@
 ## Copyright ©2007 PHP Pro Software LTD. All rights reserved.	##
 ##-------------------------------------------------------------##
 #################################################################
+define ('MSG_FORGOT_PASSWORD', 'Esqueceu a Senha?');
+define ('MSG_SHIPPING_PAYMENTS', 'Envio e Pagamentos');
+define ('MSG_NEW_USER', 'Cadastre-se!');
 
 define ('MSG_BTN_HOME', 'Principal');
 define ('MSG_BTN_REGISTER', 'Cadastro');

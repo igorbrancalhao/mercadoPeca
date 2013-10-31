@@ -47,8 +47,9 @@ if (isset($_GET['change_language'])) {
 
     $refresh_link = 'index.php';
 
-    $template_output .= '<br><p class="contentfont" align="center">' . MSG_SITE_SKIN_CHANGED . '<br><br>
-		Please click <a href="' . process_link('index') . '">' . MSG_HERE . '</a> ' . MSG_PAGE_DOESNT_REFRESH . '</p>';
+    $template_output .= '<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td><br><p class="contentfont" align="center">' . MSG_SITE_LANG_CHANGED . '<br><br>
+		Please click <a href="' . process_link('index') . '">' . MSG_HERE . '</a> ' . MSG_PAGE_DOESNT_REFRESH . '</p></td></tr></table>';
+
     $template_output .= '<script>window.setTimeout(\'changeurl();\',300); function changeurl(){window.location=\'' . $refresh_link . '\'}</script>';
 } else {
     include_once ('global_mainpage.php');

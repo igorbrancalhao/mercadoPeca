@@ -64,7 +64,7 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
          <td align="right"><b>
             <?=MSG_QUESTION_QUERY;?>
             </b></td>
-         <td><textarea name="question_content" style="width=100%; height: 150px;"><?=$user_details['question_content'];?></textarea></td>
+         <td><textarea name="question_content" style="width:100%; height: 150px;"><?=$user_details['question_content'];?></textarea></td>
       </tr>
       <tr class="c4">
          <td colspan="2"></td>

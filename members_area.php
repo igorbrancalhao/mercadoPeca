@@ -3355,15 +3355,11 @@ else
 	$cell_width = round(100/$nb_cells) . '%';
 
 	$template->set('cell_width', $cell_width);
-	
-	if ($page != 'summary')
-	{
-		$template->change_path('themes/' . $setts['default_theme'] . '/templates/');
-		$members_area_header_menu = $template->process('members_area_header_menu.tpl.php');
-		$template->change_path('templates/');
-		
-		$template->set('members_area_header_menu', $members_area_header_menu);## PHP Pro Bid v6.00 end - header members area
-	}
+        
+        $template->change_path('themes/' . $setts['default_theme'] . '/templates/');
+	$members_area_header_menu = $template->process('members_area_header_menu.tpl.php');
+	$template->change_path('templates/');
+	$template->set('members_area_header_menu', $members_area_header_menu);## PHP Pro Bid v6.00 end - header members area
 
 	$template_output .= $template->process('members_area.tpl.php');
 

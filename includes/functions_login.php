@@ -15,19 +15,16 @@ function login_user ($username, $password, $redirect_url = '', $admin_login = fa
 	if ($admin_login) ## the spoofer login, we dont need to check for the password here
 	{
 		logout(false, false);
-
-		$login_query = $db->query("SELECT user_id, username, active, approved, salt, payment_status, is_seller FROM " . DB_PREFIX . "users WHERE
+         	$login_query = $db->query("SELECT user_id, username, active, approved, salt, payment_status, is_seller FROM " . DB_PREFIX . "users WHERE
 			username='" . $username . "' LIMIT 0,1");
 	}
 	else
 	{
+             
 		$salt = $db->get_sql_field("SELECT salt FROM " . DB_PREFIX . "users WHERE username='" . $username . "'", "salt");
-
-		$password_hashed = password_hash($password, $salt);
-		
+        	$password_hashed = password_hash($password, $salt);
 		$password_old = substr(md5($password), 0, 30); ## added for backward compatibility (v5.25 and older versions)
-
-		$login_query = $db->query("SELECT user_id, username, active, approved, salt, 
+        	$login_query = $db->query("SELECT user_id, username, active, approved, salt, 
 			payment_status, is_seller FROM " . DB_PREFIX . "users WHERE username='" . $username . "' AND 
 			(password='" . $password_hashed . "' OR password='" . $password_old . "') LIMIT 0,1");
 	}

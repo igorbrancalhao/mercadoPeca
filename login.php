@@ -18,20 +18,24 @@ include_once ('includes/functions_login.php');
 
 if ($session->value('membersarea')=='Active')
 {
+     
 	header_redirect('index.php');
 }
 else if ($setts['is_ssl'] && $_SERVER['HTTPS'] != 'on' && $_REQUEST['operation'] != 'submit')
 {
+      
 	header_redirect($setts['site_path_ssl'] . 'login.php?' . $_SERVER['QUERY_STRING']);
 }
 else
 {
+    //passou
 	require ('global_header.php');
 	
 	$banned_output = check_banned($_SERVER['REMOTE_ADDR'], 1);
 
 	if ($banned_output['result'])
 	{
+             
 		$template->set('message_header', header5(MSG_LOGIN_TO_MEMBERS_AREA));
 		$template->set('message_content', $banned_output['display']);
 
@@ -39,10 +43,12 @@ else
 	}
 	else
 	{
+            //passou
 		$template->set('header_registration_message', header5(MSG_LOGIN_TO_MEMBERS_AREA));
 
 		if ($_REQUEST['operation'] == 'submit')
 		{
+                     //passou
 			$signup_fee = new fees();
 			$signup_fee->setts = &$setts;
 
@@ -65,6 +71,7 @@ else
 
 		if ($_REQUEST['invalid_login'] == 1)
 		{
+                    
 			$invalid_login_message = '<table width="400" border="0" cellpadding="4" cellspacing="0" align="center" class="errormessage"> '.
 			'	<tr><td align="center" class="alertfont"><b>' . MSG_INVALID_LOGIN . '</b></td></tr> '.
 			'</table>';
@@ -76,6 +83,7 @@ else
 		$template->set('redirect', $redirect);
 
 		$template_output .= $template->process('login.tpl.php');
+                //passou
 	}
 
 	include_once ('global_footer.php');

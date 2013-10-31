@@ -1,4 +1,4 @@
-<?
+<?php
 #################################################################
 ## PHP Pro Bid v6.04															##
 ##-------------------------------------------------------------##
@@ -85,7 +85,7 @@ function delete_media(form_name, file_type, file_id) {
       </tr>
       <tr class="c1">
          <td align="right"><b><?=AMSG_CHOOSE_SITE_SKIN;?></b></td>
-         <td><?=$site_skins_dropdown; ?> &nbsp;
+         <td><?=$site_skins_dropdown;?> &nbsp;
             [ <?=AMSG_CURRENT_SKIN;?> :
             <b><?=$setts_tmp['default_theme'];?></b> ]</td>
       </tr>

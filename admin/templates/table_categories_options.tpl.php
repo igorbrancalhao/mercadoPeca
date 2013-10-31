@@ -58,11 +58,11 @@ function delete_media(form_name, file_type, file_id) {
       </tr>
       <tr class="c1">
          <td width="150" align="right"><?=AMSG_META_DESCRIPTION;?></td>
-         <td colspan="2"><textarea name="meta_description" style="width=100%; height: 50px;"><?=$cat_details['meta_description'];?></textarea></td>
+         <td colspan="2"><textarea name="meta_description" style="width:100%; height: 50px;"><?=$cat_details['meta_description'];?></textarea></td>
       </tr>
       <tr class="c1">
          <td width="150" align="right"><?=AMSG_META_KEYWORDS;?></td>
-         <td colspan="2"><textarea name="meta_keywords" style="width=100%; height: 50px;"><?=$cat_details['meta_keywords'];?></textarea></td>
+         <td colspan="2"><textarea name="meta_keywords" style="width:100%; height: 50px;"><?=$cat_details['meta_keywords'];?></textarea></td>
       </tr>
       <?=$image_upload_manager;?>
       <tr class="c4">

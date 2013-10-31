@@ -3,22 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/mercadoPeca/themes/v6/templates/header.tpl.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/language/portugues/db.lang.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/admin/general_settings.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/admin/site_setup.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/admin/accounting.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/admin/abuse_reports.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/includes/functions.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/admin/index.php</file>
+            <file>file:/C:/wamp/www/mercadoPeca/templates/sell_item_preview.tpl.php</file>
             <file>file:/C:/wamp/www/mercadoPeca/global_header.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/includes/global.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/includes/init.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/admin/header.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/includes/class_banner.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/includes/config.php</file>
-            <file>file:/C:/wamp/www/mercadoPeca/.htaccess</file>
-            <file>file:/C:/wamp/www/mercadoPeca/admin/templates/ban_users_add_ban.tpl.php</file>
+            <file>file:/C:/wamp/www/mercadoPeca/login.php</file>
+            <file>file:/C:/wamp/www/mercadoPeca/language/portugues/site.lang.php</file>
+            <file>file:/C:/wamp/www/mercadoPeca/index.php</file>
+            <file>file:/C:/wamp/www/mercadoPeca/includes/functions_login.php</file>
+            <file>file:/C:/wamp/www/mercadoPeca/sell_item.php</file>
+            <file>file:/C:/wamp/www/mercadoPeca/members_area.php</file>
         </group>
     </open-files>
 </project-private>
