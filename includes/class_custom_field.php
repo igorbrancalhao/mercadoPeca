@@ -389,7 +389,7 @@ class custom_field extends formchecker
 	{
 		foreach ($value_array as $key => $value)
 		{
-			if (preg_match('custom_box_', $key))
+			if (preg_match('/custom_box_/i', $key))
 			{
 				$custom_box_id = intval(str_replace('custom_box_', '', $key));
 				$custom_box_id = intval(str_replace('[]', '', $custom_box_id));
@@ -412,7 +412,7 @@ class custom_field extends formchecker
 	{
 		foreach ($value_array as $key => $value)
 		{
-			if (preg_match('custom_box_', $key))
+			if (preg_match('/custom_box_/i', $key))
 			{
 				$custom_box_id = intval(str_replace('custom_box_', '', $key));
 				$custom_box_id = intval(str_replace('[]', '', $custom_box_id));
@@ -464,7 +464,7 @@ class custom_field extends formchecker
 
 		foreach ($this->vars as $key => $value)
 		{
-			if (preg_match('custom_box_', $key))
+			if (preg_match('/custom_box_/i', $key))
 			{
 				$display_output .= '<input type="hidden" name="' . $key . '" value="' . $this->rem_special_chars($value) . '" /> ';
 			}

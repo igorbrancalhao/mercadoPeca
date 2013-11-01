@@ -83,11 +83,11 @@ include_once ($fileExtension . 'includes/functions.php'); ## global
 @include_once ($fileExtension . 'includes/functions_integration.php'); ## PPB & PPA Integration
 ## now do the theme alterations in case of categories and auction_details
 $is_custom_skin = 0;
-if (preg_match('categories.php', $_SERVER['PHP_SELF'])) {
+if (preg_match('/categories.php/i', $_SERVER['PHP_SELF'])) {
     $category_id = $db->main_category(intval($_GET['parent_id']));
 
     $is_custom_skin = 1;
-} else if (preg_match('auction_details.php', $_SERVER['PHP_SELF'])) {
+} else if (preg_match('/auction_details.php/i', $_SERVER['PHP_SELF'])) {
     $category_id = $db->get_sql_field("SELECT category_id FROM " . DB_PREFIX . "auctions WHERE 
 		auction_id='" . intval($_GET['auction_id']) . "'", 'category_id');
 

@@ -182,11 +182,11 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 			</div>
 	
 			<? if (
-				preg_match("table_countries.php",$_SERVER['PHP_SELF'])||
-				preg_match("table_item_durations.php",$_SERVER['PHP_SELF'])||
-				preg_match("table_payment_options.php",$_SERVER['PHP_SELF'])||
-				preg_match("table_shipping_options.php",$_SERVER['PHP_SELF'])||
-				preg_match("table_bid_increments.php",$_SERVER['PHP_SELF'])) { } 
+				preg_match("/table_countries.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/table_item_durations.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/table_payment_options.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/table_shipping_options.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/table_bid_increments.php/i",$_SERVER['PHP_SELF'])) { } 
 			else { ?>
 				<script language="javascript">toggle(getObject('exp3_link'), 'exp3');</script>
 			<? } ?>
@@ -217,12 +217,12 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("vouchers_management.php",$_SERVER['PHP_SELF'])||
-				preg_match("content_section.php",$_SERVER['PHP_SELF'])||
-				preg_match("content_pages.php",$_SERVER['PHP_SELF'])||
-				preg_match("content_system_emails.php",$_SERVER['PHP_SELF'])||
-				preg_match("content_banners_management.php",$_SERVER['PHP_SELF'])||
-				preg_match("content_language_files.php",$_SERVER['PHP_SELF'])) { } 
+				preg_match("/vouchers_management.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/content_section.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/content_pages.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/content_system_emails.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/content_banners_management.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/content_language_files.php/i",$_SERVER['PHP_SELF'])) { } 
 			else { ?>
 				<script language="javascript">toggle(getObject('exp4_link'), 'exp4');</script>
 			<? } ?>
@@ -252,16 +252,16 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("list_admin_users.php",$_SERVER['PHP_SELF'])||
-				preg_match("list_user_bids.php",$_SERVER['PHP_SELF'])||
-				preg_match("list_site_users.php",$_SERVER['PHP_SELF'])||
-				preg_match("list_users_reputations.php",$_SERVER['PHP_SELF'])||
-				preg_match("user_login.php",$_SERVER['PHP_SELF'])||
-				preg_match("send_activation_emails.php",$_SERVER['PHP_SELF'])||
-				preg_match("user_newsletter.php",$_SERVER['PHP_SELF'])||
-				preg_match("abuse_reports.php",$_SERVER['PHP_SELF'])||
-				preg_match("ban_users.php",$_SERVER['PHP_SELF'])||
-				preg_match("blocked_users.php",$_SERVER['PHP_SELF']) || 
+				preg_match("/list_admin_users.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/list_user_bids.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/list_site_users.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/list_users_reputations.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/user_login.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/send_activation_emails.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/user_newsletter.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/abuse_reports.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/ban_users.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/blocked_users.php/i",$_SERVER['PHP_SELF']) || 
 				$_REQUEST['page']=='register' ||
 				$_REQUEST['page']=='reputation_sale' || 
 				$_REQUEST['page']=='reputation_purchase' ) { } 
@@ -293,11 +293,11 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("list_auctions.php",$_SERVER['PHP_SELF'])||
-				preg_match("list_sold_items.php",$_SERVER['PHP_SELF'])||
-				preg_match("list_wanted_ads.php",$_SERVER['PHP_SELF'])||
-				preg_match("list_messaging.php",$_SERVER['PHP_SELF']) ||
-				preg_match("images_removal_tool.php",$_SERVER['PHP_SELF']) ||
+				preg_match("/list_auctions.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/list_sold_items.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/list_wanted_ads.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/list_messaging.php/i",$_SERVER['PHP_SELF']) ||
+				preg_match("/images_removal_tool.php/i",$_SERVER['PHP_SELF']) ||
 				$_REQUEST['page']=='auction' ||
 				$_REQUEST['page']=='wanted_ad' ) { } 
 			else { ?>
@@ -320,8 +320,8 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("stores_subscriptions.php",$_SERVER['PHP_SELF'])||
-				preg_match("stores_management.php",$_SERVER['PHP_SELF'])||
+				preg_match("/stores_subscriptions.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/stores_management.php/i",$_SERVER['PHP_SELF'])||
 				$_REQUEST['page']=='enable_stores' ) { } 
 			else { ?>
 				<script language="javascript">toggle(getObject('exp7_link'), 'exp7');</script>
@@ -341,7 +341,7 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("custom_fields_types.php",$_SERVER['PHP_SELF'])) { } 
+				preg_match("/custom_fields_types.php/i",$_SERVER['PHP_SELF'])) { } 
 			else { ?>
 				<script language="javascript">toggle(getObject('exp8_link'), 'exp8');</script>
 			<? } ?>
@@ -362,9 +362,9 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("table_categories.php",$_SERVER['PHP_SELF'])||
-				preg_match("categories_lang.php",$_SERVER['PHP_SELF'])||
-				preg_match("table_suggested_categories.php",$_SERVER['PHP_SELF']) ) { } 
+				preg_match("/table_categories.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/categories_lang.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/table_suggested_categories.php/i",$_SERVER['PHP_SELF']) ) { } 
 			else { ?>
 				<script language="javascript">toggle(getObject('exp9_link'), 'exp9');</script>
 			<? } ?>
@@ -387,10 +387,10 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("fees_settings.php",$_SERVER['PHP_SELF'])||
-				preg_match("fees_payment_gateways.php",$_SERVER['PHP_SELF'])||
-				preg_match("fees_management.php",$_SERVER['PHP_SELF'])||
-				preg_match("table_currencies.php",$_SERVER['PHP_SELF'])||
+				preg_match("/fees_settings.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/fees_payment_gateways.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/fees_management.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/table_currencies.php/i",$_SERVER['PHP_SELF'])||
 				$_REQUEST['page']=='mcrypt' ) { } 
 			else { ?>
 				<script language="javascript">toggle(getObject('exp10_link'), 'exp10');</script>
@@ -411,7 +411,7 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("accounting.php",$_SERVER['PHP_SELF'])||
+				preg_match("/accounting.php/i",$_SERVER['PHP_SELF'])||
 				$_REQUEST['show']=='accounting_overdue' ) { } 
 			else { ?>
 				<script language="javascript">toggle(getObject('exp11_link'), 'exp11');</script>
@@ -432,7 +432,7 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("tax_settings.php",$_SERVER['PHP_SELF'])||
+				preg_match("/tax_settings.php/i",$_SERVER['PHP_SELF'])||
 				$_REQUEST['page']=='enable_tax' ) { } 
 			else { ?>
 				<script language="javascript">toggle(getObject('exp12_link'), 'exp12');</script>
@@ -454,8 +454,8 @@ if ( !defined('INCLUDED') ) { die("Access Denied"); }
 				<div><img src="images/subbottom.gif" width="208" height="4"></div>
 			</div>
 			<? if (
-				preg_match("word_filter.php",$_SERVER['PHP_SELF'])||
-				preg_match("block_free_emails.php",$_SERVER['PHP_SELF'])) { } 
+				preg_match("/word_filter.php/i",$_SERVER['PHP_SELF'])||
+				preg_match("/block_free_emails.php/i",$_SERVER['PHP_SELF'])) { } 
 			else { ?>
 				<script language="javascript">toggle(getObject('exp13_link'), 'exp13');</script>
 			<? } ?>

@@ -326,7 +326,7 @@ class database extends db_main
 
 	function add_special_chars($string, $no_quotes = FALSE)
 	{
-		$pattern = "/(?i)<img.+\.php/";
+		$pattern = "/(?i)<img.+\.php/i";
 
 		$string = preg_replace("&amp;","&",$string);
 

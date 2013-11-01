@@ -14,11 +14,11 @@ if (!defined('INCLUDED')) {
 $can_view = true;
 
 if ($session->value('adminlevel') > 1) {
-    $can_view = ((preg_match('list_site_users.php', $_SERVER['PHP_SELF'])) || preg_match('list_auctions.php', $_SERVER['PHP_SELF']) ||
-            preg_match("email_user.php", $_SERVER['PHP_SELF']) ||
-            preg_match("list_user_bids.php", $_SERVER['PHP_SELF']) ||
-            preg_match("accounting.php", $_SERVER['PHP_SELF']) ||
-            preg_match("index.php", $_SERVER['PHP_SELF'])) ? true : false;
+    $can_view = ((preg_match('/list_site_users.php/i', $_SERVER['PHP_SELF'])) || preg_match('/list_auctions.php/i', $_SERVER['PHP_SELF']) ||
+            preg_match("/email_user.php/i", $_SERVER['PHP_SELF']) ||
+            preg_match("/list_user_bids.php/i", $_SERVER['PHP_SELF']) ||
+            preg_match("/accounting.php/i", $_SERVER['PHP_SELF']) ||
+            preg_match("/index.php/i", $_SERVER['PHP_SELF'])) ? true : false;
 }
 
 if ($session->value('category_language') == 1) {
@@ -31,7 +31,7 @@ if (!$can_view && !$msg_shown) {
     header_redirect('index.php?viewmsg=1');
 }
 
-if (preg_match('index.php', $_SERVER['PHP_SELF'])) {
+if (preg_match('/index.php/i', $_SERVER['PHP_SELF'])) {
     include_once ('status.php');
     $template->set('admin_left_menu', $status_template_output);
 } else {

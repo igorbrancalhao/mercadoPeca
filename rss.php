@@ -112,7 +112,7 @@ function clean_string ($string, $maxchars=1200)
 			$pattern = "/\\".$single_char."+/";
 			$word = preg_replace("$pattern",$single_char,$word);
 		}
-    	if (strlen($word)==1 && !preg_match('/^[aAiIxX\+\-]/',$word)) continue;
+    	if (strlen($word)==1 && !preg_match('/^[aAiIxX\+\-]/i',$word)) continue;
 		$string[]=$word;
 	}
 	

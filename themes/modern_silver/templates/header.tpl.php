@@ -70,7 +70,7 @@ window.onload=function(){
                </div>
                <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr height="31" align="center">
-                     <? if (preg_match("index.php",$_SERVER['PHP_SELF'])) { ?>
+                     <? if (preg_match("/index.php/i",$_SERVER['PHP_SELF'])) { ?>
                      <td width="6"><img src="themes/<?=$setts['default_theme'];?>/img/db_s.gif" width="6" height="31"></td>
                      <td nowrap class="db mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=$index_link;?>"><?=MSG_BTN_HOME;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/db_e.gif" width="8" height="31"></td>
@@ -80,7 +80,7 @@ window.onload=function(){
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/lb_e.gif" width="8" height="31"></td>
                      <? } 
 						 if (!$setts['enable_private_site'] || $is_seller)  { 
-								if (preg_match("sell_item.php",$_SERVER['PHP_SELF'])) { ?>
+								if (preg_match("/sell_item.php/i",$_SERVER['PHP_SELF'])) { ?>
                      <td width="6"><img src="themes/<?=$setts['default_theme'];?>/img/db_s.gif" width="6" height="31"></td>
                      <td nowrap class="db mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=$place_ad_link;?>"><?=$place_ad_btn_msg;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/db_e.gif" width="8" height="31"></td>
@@ -90,7 +90,7 @@ window.onload=function(){
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/lb_e.gif" width="8" height="31"></td>
                      <? } 
 							} 
-            	 		if (preg_match("members_area.php",$_SERVER['PHP_SELF'])||preg_match("register.php",$_SERVER['PHP_SELF'])) { ?>
+            	 		if (preg_match("/members_area.php/i",$_SERVER['PHP_SELF'])||preg_match("/register.php/i",$_SERVER['PHP_SELF'])) { ?>
                      <td width="6"><img src="themes/<?=$setts['default_theme'];?>/img/db_s.gif" width="6" height="31"></td>
                      <td nowrap class="db mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=$register_link;?>"><?=$register_btn_msg;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/db_e.gif" width="8" height="31"></td>
@@ -99,7 +99,7 @@ window.onload=function(){
                      <td nowrap class="lb mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=$register_link;?>"><?=$register_btn_msg;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/lb_e.gif" width="8" height="31"></td>
                      
-                     <? } if (preg_match("login.php",$_SERVER['PHP_SELF'])) { ?>
+                     <? } if (preg_match("/login.php/i",$_SERVER['PHP_SELF'])) { ?>
                      <td width="6"><img src="themes/<?=$setts['default_theme'];?>/img/db_s.gif" width="6" height="31"></td>
                      <td nowrap class="db mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=$login_link;?>"><?=$login_btn_msg;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/db_e.gif" width="8" height="31"></td>
@@ -108,7 +108,7 @@ window.onload=function(){
                      <td nowrap class="lb mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=$login_link;?>"><?=$login_btn_msg;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/lb_e.gif" width="8" height="31"></td>
                      <? }  if ($setts['enable_stores']) {
-								if (preg_match("stores.php",$_SERVER['PHP_SELF'])) { ?>
+								if (preg_match("/stores.php/i",$_SERVER['PHP_SELF'])) { ?>
                      <td width="6"><img src="themes/<?=$setts['default_theme'];?>/img/db_s.gif" width="6" height="31"></td>
                      <td nowrap class="db mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=process_link('stores');?>"><?=MSG_BTN_STORES;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/db_e.gif" width="8" height="31"></td>
@@ -118,7 +118,7 @@ window.onload=function(){
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/lb_e.gif" width="8" height="31"></td>
                      <? } } 
 							if ($setts['enable_wanted_ads']) { 
-								if (preg_match("wanted_ads.php",$_SERVER['PHP_SELF'])) { ?>
+								if (preg_match("/wanted_ads.php/i",$_SERVER['PHP_SELF'])) { ?>
                      <td width="6"><img src="themes/<?=$setts['default_theme'];?>/img/db_s.gif" width="6" height="31"></td>
                      <td nowrap class="db mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=process_link('wanted_ads');?>"><?=MSG_BTN_WANTED_ADS;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/db_e.gif" width="8" height="31"></td>
@@ -137,7 +137,7 @@ window.onload=function(){
                      <td nowrap class="lb mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=process_link('content_pages', array('page' => 'help'));?>"><?=MSG_BTN_HELP;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/lb_e.gif" width="8" height="31"></td>
                      <? } 
-             			if (preg_match("site_fees.php",$_SERVER['PHP_SELF'])) { ?>
+             			if (preg_match("/site_fees.php/i",$_SERVER['PHP_SELF'])) { ?>
                      <td width="6"><img src="themes/<?=$setts['default_theme'];?>/img/db_s.gif" width="6" height="31"></td>
                      <td nowrap class="db mainmenu" width="<?=$header_cell_width;?>">&nbsp;<a href="<?=process_link('site_fees');?>"><?=MSG_BTN_SITE_FEES;?></a>&nbsp;</td>
                      <td width="8"><img src="themes/<?=$setts['default_theme'];?>/img/db_e.gif" width="8" height="31"></td>

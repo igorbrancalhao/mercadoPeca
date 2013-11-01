@@ -15,7 +15,7 @@ include_once ('../includes/global.php');
 
 include_once ('../includes/functions_login.php');
 
-if (preg_match('logout', $_GET['option'])) {
+if (preg_match('/logout/i', $_GET['option'])) {
     logout(true);
 }
 

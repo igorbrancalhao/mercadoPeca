@@ -63,33 +63,33 @@ if ($setts['is_mod_rewrite']) {
     }
 }
 
-if (!preg_match("sell_item.php", $_SERVER['PHP_SELF']) || !preg_match("sell_item.php", $_SERVER['PHP_SELF']) || $_REQUEST['option'] == "new_item" || preg_match("sell_item.php", $_SERVER['PHP_SELF']) && $_REQUEST['option'] == "sell_similar") {
+if (!preg_match("/sell_item.php/i", $_SERVER['PHP_SELF']) || !preg_match("/sell_item.php/i", $_SERVER['PHP_SELF']) || $_REQUEST['option'] == "new_item" || preg_match("sell_item.php", $_SERVER['PHP_SELF']) && $_REQUEST['option'] == "sell_similar") {
     $session->unregister("auction_id");
     $session->unregister("refresh_id");
 }
 
-if (!preg_match("wanted_manage.php", $_SERVER['PHP_SELF'])) {
+if (!preg_match("/wanted_manage.php/i", $_SERVER['PHP_SELF'])) {
     $session->unregister("wanted_ad_id");
     $session->unregister("wa_refresh_id");
 }
 
-if (!preg_match("edit_item.php", $_SERVER['PHP_SELF'])) {
+if (!preg_match("/edit_item.php/i", $_SERVER['PHP_SELF'])) {
     $session->unregister("edit_refresh_id");
 }
 
-if (!preg_match("bid.php", $_SERVER['PHP_SELF'])) {
+if (!preg_match("/bid.php/i", $_SERVER['PHP_SELF'])) {
     $session->unregister("bid_id");
 }
 
-if (!preg_match("buy_out.php", $_SERVER['PHP_SELF'])) {
+if (!preg_match("/buy_out.php/i", $_SERVER['PHP_SELF'])) {
     $session->unregister("buyout_id");
 }
 
-if (!preg_match("make_offer.php", $_SERVER['PHP_SELF'])) {
+if (!preg_match("/make_offer.php/i", $_SERVER['PHP_SELF'])) {
     $session->unregister("make_offer_id");
 }
 
-if (!preg_match("swap_offer.php", $_SERVER['PHP_SELF'])) {
+if (!preg_match("/swap_offer.php/i", $_SERVER['PHP_SELF'])) {
     $session->unregister("swap_offer_id");
 }
 

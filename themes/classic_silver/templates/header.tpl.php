@@ -205,7 +205,7 @@ window.onload=function(){
       <?=MSG_JS_NOT_SUPPORTED;?>
       </noscript>
       <? } ?>
-      <? if ($setts['enable_header_counter'] && preg_match('index.php', $_SERVER['PHP_SELF'])) { ?>
+      <? if ($setts['enable_header_counter'] && preg_match('/index.php/i', $_SERVER['PHP_SELF'])) { ?>
       <?=$header_site_status;?>
       <table width='100%' border='0' cellpadding='3' cellspacing='0'>
          <tr>

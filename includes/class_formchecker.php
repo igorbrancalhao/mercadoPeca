@@ -120,7 +120,7 @@ class formchecker extends database
 	{
 		foreach ($value_array as $key => $value)
 		{
-			if (preg_match('custom_box_', $key))
+			if (preg_match('/custom_box_/i', $key))
 			{
 				$custom_box_id = intval(str_replace('custom_box_', '', $key));
 				$custom_box_id = intval(str_replace('[]', '', $custom_box_id));
@@ -319,7 +319,7 @@ class formchecker extends database
 	// check whether input is alphabetic
 	function field_alpha($field, $msg)
 	{
-		$pattern = "/^[a-zA-Z0-9 ]+$/";
+		$pattern = "/^[a-zA-Z0-9 ]+$/i";
 		if(preg_match($pattern, $value))
 		{
 			return true;
@@ -333,7 +333,7 @@ class formchecker extends database
 
 	function invalid_html($value, $msg)
 	{
-		$pattern = "/(?i)<img.+\.php.+>/";
+		$pattern = "/(?i)<img.+\.php.+>/i";
 		if(preg_match($pattern, $value))
 		{
 			$this->error_list[] = array("value" => $value, "msg" => $msg);
@@ -363,7 +363,7 @@ class formchecker extends database
 	{
 		$value = $this->add_special_chars($value);
 
-		if(!preg_match('<script', $value))
+		if(!preg_match('/<script/i', $value))
 		{
 			return true;
 		}
@@ -378,7 +378,7 @@ class formchecker extends database
 	{
 		$value = $this->add_special_chars($value);
 
-		if(!preg_match('<iframe', $value))
+		if(!preg_match('/<iframe/i', $value))
 		{
 			return true;
 		}
@@ -419,7 +419,7 @@ class formchecker extends database
 	// check whether input is a valid email address
 	function is_email_address($value, $msg)
 	{
-		$pattern = "/^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-]+)+/";
+		$pattern = "/^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-]+)+/i";
 		if(preg_match($pattern, $value))
 		{
 			return true;

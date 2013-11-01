@@ -1231,7 +1231,7 @@ class item extends custom_field
 	{
 		(string) $display_output = null;
 
-		$pattern = '/\.(?i)php/';
+		$pattern = '/\.(?i)php/i';
 
 		$file_name = (preg_match($pattern, $file_name)) ? 'images/broken.gif' : $file_name;
 

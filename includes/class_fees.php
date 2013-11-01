@@ -761,7 +761,7 @@ class fees extends tax
 			{
 				$this->set_fees($winner_details['seller_id'], $winner_details['category_id']);
 
-				$payer_id = (preg_match('b', $this->fee['endauction_fee_applies'])) ? $winner_details['buyer_id'] : $winner_details['seller_id'];
+				$payer_id = (preg_match('/b/i', $this->fee['endauction_fee_applies'])) ? $winner_details['buyer_id'] : $winner_details['seller_id'];
 
 				$invoice_name = GMSG_ENDAUCTION_FEE . ' - ' . MSG_AUCTION_ID . ': ' . $winner_details['auction_id'];
 
@@ -1457,7 +1457,7 @@ class fees extends tax
 
 		$this->set_fees($item_details['owner_id'], $item_details['category_id']); ## by default the seller will pay
 
-		if (preg_match('b', $this->fee['endauction_fee_applies']))
+		if (preg_match('/b/i', $this->fee['endauction_fee_applies']))
 		{
 			$payer_id = $winning_bid_details['buyer_id'];
 			$this->set_fees($winning_bid_details['buyer_id']); ## if buyer will pay, reset fees

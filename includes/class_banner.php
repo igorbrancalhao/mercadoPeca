@@ -94,13 +94,13 @@ class banner extends database {
 
         if ($this->setts['is_ssl']) {
             foreach ($ssl_url_array as $value) {
-                if (preg_match($value, $base_url)) {
+                if (preg_match('/'.$value.'/i', $base_url)) {
                     $advert_query .= " AND advert_type=1";
                 }
             }
         }
 
-        if (preg_match('categories.php', $base_url)) {
+        if (preg_match('/categories.php/i', $base_url)) {
             $category_id = $this->main_category($parent_id);
             $advert_query_cats = " AND (LOCATE('," . $category_id . ",', CONCAT(',',advert_categories,','))>0 OR advert_categories='0')";
 
@@ -111,7 +111,7 @@ class banner extends database {
             } else {
                 $advert_query .= " AND advert_categories='0'";
             }
-        } else if (preg_match('auction_details.php', $base_url)) {
+        } else if (preg_match('/auction_details.php/i', $base_url)) {
             $item_details = $this->get_sql_row("SELECT category_id, addl_category_id FROM " . DB_PREFIX . "auctions WHERE
 				auction_id='" . $auction_id . "'");
 

@@ -281,7 +281,7 @@ function list_skins($location = 'site', $drop_down = false, $selected_skin = nul
     $handle = opendir($relative_path . 'themes');
 
     while ($file = readdir($handle)) {
-        if (!preg_match('[.]', $file)) {
+        if (!preg_match('/[.]/i', $file)) {
             $output[] = $file;
         }
     }
@@ -320,7 +320,7 @@ function list_languages($location = 'site', $drop_down = false, $selected_langua
     $handle = opendir($relative_path . 'language');
 
     while ($file = readdir($handle)) {
-        if (!preg_match('[.]', $file)) {
+        if (!preg_match('/[.]/i', $file)) {
             $output[] = $file;
         }
     }
@@ -628,12 +628,12 @@ function meta_tags($base_url, $parent_id, $auction_id, $wanted_ad_id) {
     (array) $output = null;
     (array) $subcats_array = null;
 
-    if (preg_match('auction_details.php', $base_url)) {
+    if (preg_match('/auction_details.php/i', $base_url)) {
         $item_details = $db->get_sql_row("SELECT auction_id, name, end_time, category_id FROM " . DB_PREFIX . "auctions WHERE
 			auction_id='" . $auction_id . "'");
 
         $parent_id = $item_details['category_id'];
-    } else if (preg_match('wanted_details.php', $base_url)) {
+    } else if (preg_match('/wanted_details.php/i', $base_url)) {
         $item_details = $db->get_sql_row("SELECT wanted_ad_id, name, end_time, category_id FROM " . DB_PREFIX . "wanted_ads WHERE
 			wanted_ad_id='" . $wanted_ad_id . "'");
 
@@ -653,7 +653,7 @@ function meta_tags($base_url, $parent_id, $auction_id, $wanted_ad_id) {
     }
 
     /* now generate the title and meta tags */
-    if (preg_match('auction_details.php', $base_url)) {
+    if (preg_match('/auction_details.php/i', $base_url)) {
         $output['title'] = $db->add_special_chars($item_details['name']) . ' (' . MSG_AUCTION_ID . ': ' . $item_details['auction_id'] . ', ' .
                 GMSG_END_TIME . ': ' . show_date($item_details['end_time']) . ') - ' . $setts['sitename'];
 
@@ -661,7 +661,7 @@ function meta_tags($base_url, $parent_id, $auction_id, $wanted_ad_id) {
                 MSG_MTT_IN_THE . ' ' . $db->add_special_chars($db->implode_array($subcats_array, ' - ')) . ' ' . MSG_MTT_CATEGORY_ON . ' ' . $setts['sitename'] . '"> ' .
                 '<meta name="keywords" content="' . $db->add_special_chars($item_details['name']) . ', ' . $db->add_special_chars($db->implode_array($subcats_array, ', ')) . ', ' .
                 $setts['sitename'] . '"> ';
-    } else if (preg_match('wanted_details.php', $base_url)) {
+    } else if (preg_match('/wanted_details.php/i', $base_url)) {
         $output['title'] = $db->add_special_chars($item_details['name']) . ' (' . MSG_WANTED_AD_ID . ': ' . $item_details['wanted_ad_id'] . ', ' .
                 GMSG_END_TIME . ': ' . show_date($item_details['end_time']) . ') - ' . $setts['sitename'];
 
@@ -669,7 +669,7 @@ function meta_tags($base_url, $parent_id, $auction_id, $wanted_ad_id) {
                 MSG_MTT_IN_THE . ' ' . $db->add_special_chars($db->implode_array($subcats_array, ' - ')) . ' ' . MSG_MTT_CATEGORY_ON . ' ' . $setts['sitename'] . '"> ' .
                 '<meta name="keywords" content="' . $db->add_special_chars($item_details['name']) . ', ' . $db->add_special_chars($db->implode_array($subcats_array, ', ')) . ', ' .
                 $setts['sitename'] . '"> ';
-    } else if (preg_match('categories.php', $base_url)) {
+    } else if (preg_match('/categories.php/i', $base_url)) {
         $output['title'] = ((is_array($subcats_array)) ? $db->add_special_chars($db->implode_array($subcats_array, ' - ')) . ' - ' : '') . $setts['sitename'];
 
         $main_category_id = $db->main_category($parent_id);

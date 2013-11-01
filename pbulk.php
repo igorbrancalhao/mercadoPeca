@@ -120,7 +120,7 @@ function uploadmovie($movs)
 	
 	if ($moviefile!="" AND $setts['media_max_size']>0)
 	{
-		if (!preg_match("http://", $moviefile))
+		if (!preg_match("/http:///i", $moviefile))
 		{
 			if ($_FILES['userfile2']['name'][0]!="")
 			{
@@ -166,7 +166,7 @@ function uploadfiles($pics)
 	$cc=0;
 	for ($i=0; $i<5; $i++) 
 	{
-		if ($pictures[$i]!=""&&!preg_match("http://",$pictures[$i])) 
+		if ($pictures[$i]!=""&&!preg_match("/http:///i",$pictures[$i])) 
 		{
 			if ($_FILES['userfile']['name'][$cc]!="") 
 			{
@@ -196,7 +196,7 @@ function uploadfiles($pics)
 			}
 			$cc++;
 		} 
-		else if (preg_match("http://",$pictures[$i]))
+		else if (preg_match("/http:///i",$pictures[$i]))
 		{
 			//dump("$i - http");
 			$return[$i]=$pictures[$i];
@@ -359,7 +359,7 @@ while ($row=mysql_fetch_array($result))
 		$mymovie=$row['movie'];
 		if ($mymovie != "")
 		{
-			if (!preg_match("http://",$mymovie))
+			if (!preg_match("/http:///i",$mymovie))
 			$mymovie="uplimg/$mymovie";
 		}
 		else $mymovie="";
@@ -390,7 +390,7 @@ while ($row=mysql_fetch_array($result))
 		{
 			if ($pictures[$ii]) 
 			{
-				if (preg_match("http://",$pictures[$ii]))
+				if (preg_match("/http:///i",$pictures[$ii]))
 				{
 					$addpic = $pictures[$ii];
 				}
@@ -405,7 +405,7 @@ while ($row=mysql_fetch_array($result))
 		////////////////  ADD MOVIE TO MEDIA TABLE   //////////////////////
 		if ($mymovie != "") 
 		{
-			if (preg_match("http://",$mymovei)) $addmov = $mymovie;
+			if (preg_match("/http:///i",$mymovei)) $addmov = $mymovie;
 			else $addmov = $mymovie;
 			mysql_query("INSERT INTO " . DB_PREFIX . "auction_media(media_url,auction_id,media_type) VALUES('$addmov','$auid','2')");
 		}

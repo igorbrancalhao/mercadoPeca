@@ -12,18 +12,19 @@ session_start();
 define('IN_SITE', 1);
 define('INDEX_PAGE', 1); ## for integration
 
-if (!file_exists('includes/config.php'))
+if (!file_exists('includes/config.php')){
     echo "<script>document.location.href='install/install.php'</script>";
+}
 
 include_once ('includes/global.php');
 
 include_once ('includes/functions_login.php');
 include_once ('includes/functions_item.php');
 
-if (preg_match('logout', $_GET['option'])) {
+if (preg_match('/logout/i', $_GET['option'])) {
     logout();
 }
-
+        
 include_once ('global_header.php');
 
 if (isset($_GET['change_language'])) {
